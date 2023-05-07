@@ -14,7 +14,9 @@ const Login = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1> Enter your name:</h1>
+            <h1>
+                Enter your name:
+            </h1>
             <form onSubmit={enterYourName}>
                 <input
                     className={styles.input}

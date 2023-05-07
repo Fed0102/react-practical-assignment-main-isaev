@@ -12,7 +12,7 @@ import {
 
 const MAIN_URL = 'http://localhost:8080';
 
-export const fetchNewPost = createAsyncThunk(
+export const createPost = createAsyncThunk(
     'posts/addPost',
     async function (post, {rejectedWithValue, dispatch}) {
         try {
@@ -44,7 +44,7 @@ export const fetchPosts = createAsyncThunk(
         }
     }
 );
-export const filteredPosts = createAsyncThunk(
+export const filterAndSearchPost = createAsyncThunk(
     'posts/fetchPosts',
     async function (value, {rejectWithValue, dispatch}) {
         try {
@@ -95,7 +95,7 @@ export const updatePost = createAsyncThunk(
         }
     }
 );
-export const fetchNewComment = createAsyncThunk(
+export const createNewComment = createAsyncThunk(
     'comment/add',
     async function (comment, {rejectedWithValue, dispatch}) {
         try {

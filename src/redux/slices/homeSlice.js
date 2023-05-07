@@ -2,10 +2,10 @@ import { createSlice} from "@reduxjs/toolkit";
 import {
     deleteComment,
     deletePost,
-    fetchNewComment,
-    fetchNewPost,
+    createNewComment,
+    createPost,
     fetchPosts,
-    filteredPosts,
+    filterAndSearchPost,
     updateComment,
     updatePost,
     uploadNewPostImage
@@ -130,14 +130,14 @@ const HomeSlice = createSlice({
             state.status = 'resolved';
             state.posts = action.payload.result;
         },
+        [createPost.rejected]: setError,
         [fetchPosts.rejected]: setError,
-        [deletePost.rejected]: setError,
         [updatePost.rejected]: setError,
-        [fetchNewComment.rejected]: setError,
-        [fetchNewPost.rejected]: setError,
+        [deletePost.rejected]: setError,
+        [filterAndSearchPost.rejected]: setError,
+        [createNewComment.rejected]: setError,
         [deleteComment.rejected]: setError,
         [updateComment.rejected]: setError,
-        [filteredPosts.rejected]: setError,
         [uploadNewPostImage.rejected]: setError,
     }
 });

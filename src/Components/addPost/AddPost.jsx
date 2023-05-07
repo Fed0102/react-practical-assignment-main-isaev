@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './AddPost.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import MyButton from "../UI/button/MyButton";
-import {fetchNewPost, uploadNewPostImage} from "../../redux/serverRequests";
+import {createPost, uploadNewPostImage} from "../../redux/serverRequests";
 const AddPost = ({setShow}) => {
     const [title, setTitle] = useState('');
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const AddPost = ({setShow}) => {
             file: formData
         }
         dispatch(uploadNewPostImage(info))
-        dispatch(fetchNewPost({title, userName}))
+        dispatch(createPost({title, userName}))
         setShow(false)
     }
 

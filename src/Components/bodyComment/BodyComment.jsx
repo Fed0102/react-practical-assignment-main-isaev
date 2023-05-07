@@ -13,20 +13,14 @@ import {deleteComment, updateComment} from "../../redux/serverRequests";
 const BodyComment = ({comment}) => {
     const user = useSelector(state => state.loginPage.login);
     const [show, setShow] = useState(false);
-    const dispatch = useDispatch();
     const likes = comment.likes.length - comment.dislikes.length;
-    const dateFormat = new Date(JSON.parse(comment.date));
     const equal = user.toLowerCase() === comment.username.toLowerCase();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(updateComment(comment))
     }, [likes])
 
-    const payload = {
-        postId: comment.postId,
-        comId: comment.id,
-        userName: user
-    }
     const handlerDeleteComm = () => {
         const info = {
             postId: comment.postId,
@@ -34,12 +28,18 @@ const BodyComment = ({comment}) => {
         }
         dispatch(deleteComment(info));
     }
-    const addLikeOnComment = () => {
-        dispatch(editLikesComment(payload))
 
+    const payload = {
+        postId: comment.postId,
+        comId: comment.id,
+        userName: user
+    }
+
+    const addLikeOnComment = () => {
+        dispatch(editLikesComment(payload));
     }
     const deleteLikeOnComment = () => {
-        dispatch(editDisLikesComments(payload))
+        dispatch(editDisLikesComments(payload));
     }
 
     return (
@@ -59,7 +59,7 @@ const BodyComment = ({comment}) => {
                 <MyButton onClick={() => addLikeOnComment()}>LikeComment</MyButton>
             </div>
             {equal && <MyButton onClick={() => setShow(true)}>EditComment</MyButton>}
-            <p>Comment date: {dateFormat.toLocaleString('en-US', {
+            <p>Comment date: {new Date(JSON.parse(comment.date)).toLocaleString('en-US', {
                 day: 'numeric',
                 month: 'numeric',
                 year: 'numeric',

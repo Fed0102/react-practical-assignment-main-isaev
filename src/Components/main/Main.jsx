@@ -7,29 +7,29 @@ import Pagination from "../paginations/Pagination";
 import AddPost from "../addPost/AddPost";
 import MyButton from "../UI/button/MyButton";
 import MyModal from "../UI/modal/MyModal";
-import {fetchPosts, filteredPosts} from "../../redux/serverRequests";
-
+import {fetchPosts, filterAndSearchPost} from "../../redux/serverRequests";
 
 const Main = () => {
-    const [searchValue, setSearchValue] = useState('');
-    const dispatch = useDispatch();
+    const [search, setSearch] = useState('');
     const [show, setShow] = useState(false);
-    const {error, pageNumber, posts} = useSelector(state => state.homePage)
+    const {error, pageNumber, posts} = useSelector(state => state.homePage);
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
         dispatch(fetchPosts(pageNumber));
-
-        if (searchValue) {
-            dispatch(filteredPosts(searchValue))
+        if (search) {
+            dispatch(filterAndSearchPost(search))
         }
-    }, [searchValue, pageNumber, error])
+    }, [search, pageNumber, error])
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.inputButton}>
-                <MyButton onClick={() => setShow(true)} className={styles.addBtn}>Add post</MyButton>
-                <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
+                <MyButton onClick={() => setShow(true)}>
+                    Add post
+                </MyButton>
+                <Search searchValue={search} setSearchValue={setSearch}/>
             </div>
             <div className={styles.items}>
                 {posts.map((post) => <BodyPost post={post} key={post.id}/>)}

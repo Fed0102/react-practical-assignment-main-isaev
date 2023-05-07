@@ -28,17 +28,24 @@ const EditPost = ({setEditShow, post}) => {
             dispatch(uploadNewPostImage(info))
             dispatch(updatePost(newPostInfo))
         }
-        setEditShow(false)
+        setEditShow(false);
     }
     return (
         <div>
             <div>
                 <div className={styles.thirdDiv}>
-                    <p className={styles.p}>Edit your post:</p>
-                    <MyButton onClick={() => setEditShow(false)}>Close</MyButton>
+                    <p className={styles.p}>
+                        Edit your post:
+                    </p>
+                    <MyButton onClick={() => setEditShow(false)}>
+                        Close
+                    </MyButton>
                 </div>
                 <div>
-                    <input className={styles.input} value={editValue} onChange={(e) => setEditValue(e.target.value)}/>
+                    <input className={styles.input}
+                           value={editValue}
+                           onChange={(e) => setEditValue(e.target.value)}
+                    />
                 </div>
                 <div className={styles.thirdDiv}>
                     <p className={styles.p}>Edit your file:</p>
@@ -49,9 +56,12 @@ const EditPost = ({setEditShow, post}) => {
                         accept={"image/*,.png,.jpg"}
                         onChange={(event) => {
                             setImageUpload(event.target.files[0])
-                        }}/>
+                        }}
+                    />
                 </div>
-                <MyButton onClick={() => editPost()}>Edit</MyButton>
+                <MyButton onClick={() => editPost()}>
+                    Edit
+                </MyButton>
             </div>
         </div>
     );

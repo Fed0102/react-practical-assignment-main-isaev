@@ -1,16 +1,14 @@
 .wrapper{
     display: flex;
-    padding: 10px 40px;
-    margin: 0;
+    padding:0 100px 0 100px;
     justify-content: space-between;
-    box-shadow: 2px 2px 4px #1A4BBC;
+    box-shadow: 4px 4px 4px #1A4BBC;
 }
 
-.user{
+.login{
     text-align: center;
     border: 2px #1A4BBC solid;
     border-radius: 30px;
-    width: content-box;
     padding: 0 10px 0 10px;
     height: 39px;
     color: #1A4BBC;

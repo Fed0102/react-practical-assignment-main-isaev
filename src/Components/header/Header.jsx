@@ -7,13 +7,17 @@ const Header = () => {
 
     const login = useSelector(state => state.loginPage.login)
     const dispatch = useDispatch();
-    const handleLogOut = ()=>{
+    const logOut = ()=>{
         dispatch(deleteUser());
     }
     return (
         <div className={styles.wrapper}>
-            <h2 className={styles.user}>{login}</h2>
-            <MyButton onClick={()=>handleLogOut()}>Logout</MyButton>
+            <h2 className={styles.login}>
+                {login}
+            </h2>
+            <MyButton onClick={()=>logOut()}>
+                Logout
+            </MyButton>
         </div>
     );
 };

@@ -12,9 +12,9 @@ import {deletePost, updatePost} from "../../redux/serverRequests";
 const BodyPost = ({post}) => {
     const [comShow, setComShow] = useState(false);
     const [editShow, setEditShow] = useState(false);
-    const user = useSelector(state => state.loginPage.login)
+    const login = useSelector(state => state.loginPage.login)
     const likes = post.likes.length - post.dislikes.length;
-    const equal = user.toLowerCase() === post.username.toLowerCase();
+    const equal = login.toLowerCase() === post.username.toLowerCase();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const BodyPost = ({post}) => {
         <div className={styles.root}>
             <div>
                 <div className={styles.fourDiv}>
-                    <span className={styles.name}>{post.username}</span>
+                    <p className={styles.name}>{post.username}</p>
                     {equal && <MyButton onClick={() => handleDeletePost(post.id)}>Delete post</MyButton>}
                 </div>
                 {post.imageSrc &&
@@ -47,10 +47,10 @@ const BodyPost = ({post}) => {
                     </div>}
                 <p>{post.title}</p>
             </div>
-            <span>Likes: {likes}</span>
+            <p>Likes: {likes}</p>
             <div>
-                <MyButton onClick={() => dislike({id: post.id, user: user})}>Dislike post</MyButton>
-                <MyButton onClick={() => like({id: post.id, user: user})}>Like post</MyButton>
+                <MyButton onClick={() => dislike({id: post.id, user: login})}>Dislike post</MyButton>
+                <MyButton onClick={() => like({id: post.id, user: login})}>Like post</MyButton>
             </div>
             {equal && <MyButton onClick={() => setEditShow(true)}>Edit post</MyButton>}
             <MyButton onClick={() => setComShow(true)}>Add comment</MyButton>

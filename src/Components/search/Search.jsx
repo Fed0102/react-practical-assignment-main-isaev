@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from "./Search.module.css";
 
-const Search = ({searchValue, setSearchValue}) => {
+const Search = ({search, setSearch}) => {
 
     return (
         <div className={styles.search}>
-            <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className={styles.input}
+            <input value={search}
+                   onChange={(e) => setSearch(e.target.value)}
+                   className={styles.input}
                    placeholder={'Search'}/>
         </div>
     );
