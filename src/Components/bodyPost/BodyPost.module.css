@@ -1,0 +1,30 @@
+.root {
+    width: 300px;
+    height: fit-content;
+    margin: 15px auto;
+    border: 2px #1A4BBC solid;
+    box-shadow: 2px 2px 2px #1A4BBC;
+    padding: 10px;
+    text-align: center;
+}
+
+.name {
+    border: 2px #1A4BBC solid;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+.frame > img {
+    display: block;
+    margin: 5px auto;
+    width: 200px;
+}
+
+.fourDiv {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}

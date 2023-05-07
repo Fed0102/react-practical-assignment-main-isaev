@@ -1,0 +1,18 @@
+.firstDiv {
+    padding: 5px;
+    border: 2px solid #1A4BBC;
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+
+.secondDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondDiv h4 {
+    border: 2px solid #1A4BBC;
+    border-radius: 30px;
+    padding: 5px;
+    background-color: whitesmoke;
+}

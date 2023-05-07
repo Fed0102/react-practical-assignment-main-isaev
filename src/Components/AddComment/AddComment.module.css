@@ -1,0 +1,17 @@
+.secondDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    width: 300px;
+    height: 32px;
+    border: 2px solid #1A4BBC;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.thirdDiv {
+    display: flex;
+    justify-content: space-between;
+}

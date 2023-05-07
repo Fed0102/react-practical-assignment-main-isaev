@@ -1,0 +1,19 @@
+
+.p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A4BBC;
+}
+
+.thirdDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    border: 2px solid #1A4BBC;
+    padding: 10px;
+    width: 480px;
+    border-radius: 20px;
+    margin-top: 10px;
+}

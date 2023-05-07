@@ -1,0 +1,18 @@
+.wrapper{
+    display: flex;
+    padding: 10px 40px;
+    margin: 0;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px #1A4BBC;
+}
+
+.user{
+    text-align: center;
+    border: 2px #1A4BBC solid;
+    border-radius: 30px;
+    width: content-box;
+    padding: 0 10px 0 10px;
+    height: 39px;
+    color: #1A4BBC;
+    background-color: whitesmoke;
+}

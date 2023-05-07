@@ -1,0 +1,16 @@
+.btn{
+    border: 2px #1A4BBC solid;
+    border-radius: 20px;
+    width: 150px;
+    height: 39px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #1A4BBC;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+.btn:hover{
+    background-color: #1A4BBC;
+    border: 2px #1A4BBC solid;
+    color: white;
+}
