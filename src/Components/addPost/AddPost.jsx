@@ -32,8 +32,8 @@ const AddPost = ({setShow}) => {
                        placeholder={'Enter your text'}/>
                 <div className={styles.wrapper}>
                     <p className={styles.p}>Choose file</p>
-                    <input onChange={(event) => {
-                        setImageUpload(event.target.files[0])
+                    <input onChange={(e) => {
+                        setImageUpload(e.target.files[0])
                     }}
                            accept={"image/*,.png,.jpg"}
                            type={'file'}/>
